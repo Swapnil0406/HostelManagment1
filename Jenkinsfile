@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'Maven-3.9.9'   // 👈 This name must match Global Tool Configuration
+        jdk 'jdk-17'
+    }
     stages {
         stage('SCM') {
             steps {
