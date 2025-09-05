@@ -6,9 +6,9 @@ pipeline {
                 git branch: 'master', url: 'https://github.com/Swapnil0406/HostelManagment1.git'
             }
         }
-        stage('Build WAR') {
+        stage('Build') {
             steps {
-                sh 'mvn clean package -DskipTests'
+                sh 'mvn clean package'
             }
         }        
   stage('Build Docker Image') {
