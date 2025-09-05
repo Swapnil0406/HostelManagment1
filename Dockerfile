@@ -10,8 +10,8 @@ RUN rm -rf /opt/tomcat/webapps/*
 # Copy your WAR file into Tomcat webapps directory
 COPY target/HostelManagementSystem.war /usr/local/tomcat/webapps/
 
-# Expose port 8085
-EXPOSE 8085
+# Expose port 8080
+EXPOSE 8080
 
 # Start Tomcat
 CMD ["catalina.sh", "run"]
