@@ -8,7 +8,7 @@ pipeline {
         }
        stage('Build WAR') {
     tools {
-        maven 'Maven-3.9.11' // Name you gave in Jenkins global config
+        maven 'maven' // Name you gave in Jenkins global config
           }
     steps {
         sh 'mvn clean package -DskipTests'
