@@ -1,6 +1,11 @@
 pipeline {
     agent any
-    
+     environment {
+        IMAGE_NAME = 'swapnil390/tomcat:latest'
+        CONTAINER_NAME = 'HostelManagement'
+        HOST_PORT = '8085'
+        CONTAINER_PORT = '8080' // Default Tomcat port inside container
+    }
     stages {
         stage('SCM') {
             steps {
