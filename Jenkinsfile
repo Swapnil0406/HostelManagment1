@@ -13,10 +13,13 @@ pipeline {
         sh 'docker build -t swapnil390/tomcat:latest .'
          }
        }
-         stage('Build Docker Image') {
+        stage('Run Docker Container') {
     steps {
-        docker run -d --name HostelManagement -p 8085:8085 swapnil390/tomcat:latest
-         }
-       }
+        sh '''
+            docker rm -f HostelManagement || true
+            docker run -d --name HostelManagement -p 8085:8085 swapnil390/tomcat:latest
+        '''
+        }
+      }
     }
 }
