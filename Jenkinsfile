@@ -8,13 +8,12 @@ pipeline {
             }
         }
         
-         stage('Build Docker Image') {
-            steps {
-                echo "Building Docker image..."
-                sh """
-                    docker build -t swapnil390/tomcat:latest .
-                """
+   stage('Build Docker Image') {
+    steps {
+        script {
+            docker.build("swapnil390/tomcat:latest")
             }
-        }
+         }
+       }
     }
 }
