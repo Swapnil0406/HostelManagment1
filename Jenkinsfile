@@ -27,18 +27,18 @@ pipeline {
         '''
         }
       }
-stage('Push Docker Image') {
+        stage('Push Docker Image') {
     steps {
         withCredentials([usernamePassword(credentialsId: 'docker-hub-creds', 
-                                          usernameVariable: 'swapnil390', 
-                                          passwordVariable: 'Swapnil@123')]) {
+                                          usernameVariable: 'DOCKER_USER', 
+                                          passwordVariable: 'DOCKER_PASS')]) {
             // Login to Docker Hub
-            sh 'echo $Swapnil@123 | docker login -u $Swapnil390 --password-stdin'
+            sh 'echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin'
             
             // Push the image
             sh 'docker push swapnil390/tomcat:latest'
-           }
-         }
-       }
+          }
+        }
+      }
     }
 }
