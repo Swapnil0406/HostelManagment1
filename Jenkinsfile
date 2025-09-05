@@ -6,11 +6,14 @@ pipeline {
                 git branch: 'master', url: 'https://github.com/Swapnil0406/HostelManagment1.git'
             }
         }
-        stage('Build') {
-            steps {
-                sh 'mvn clean package'
-            }
-        }        
+       stage('Build WAR') {
+    tools {
+        maven 'Maven-3.9.11' // Name you gave in Jenkins global config
+          }
+    steps {
+        sh 'mvn clean package -DskipTests'
+          }
+        }
   stage('Build Docker Image') {
     steps {
         sh 'docker build -t swapnil390/tomcat:latest .'
