@@ -8,7 +8,7 @@ LABEL maintainer="swapnil"
 RUN rm -rf /opt/tomcat/webapps/*
 
 # Copy your WAR file into Tomcat webapps directory
-COPY /var/lib/jenkins/workspace/Hostel-Management/target/HostelManagementSystem.war /opt/tomcat/webapps
+COPY /var/lib/jenkins/workspace/Hostel-Management/target/HostelManagementSystem.war  /opt/tomcat/webapps
 
 # Expose port 8085
 EXPOSE 8085
