@@ -11,7 +11,7 @@ pipeline {
    stage('Build Docker Image') {
     steps {
         script {
-           sh 'sudo docker.build -t swapnil390/tomcat:latest .'
+           sh 'docker.build -t swapnil390/tomcat:latest .'
             }
          }
        }
