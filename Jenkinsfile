@@ -9,7 +9,8 @@ pipeline {
         }
         stage('Package') { 
             steps {
-                mvn package  
+                'mvn clean'
+                'mvn package'
             }
         }
     }
